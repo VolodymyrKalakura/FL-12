@@ -8,9 +8,9 @@ let x1 = parseInt((-b - sqrtDiscr) / (2 * a));
 let x2 = parseInt((-b + sqrtDiscr) / (2 * a));
 
 let output = (a === 0) ? 'Invalid input data' :
-				(discr < 0) ? 'no solution' :
-				(discr === 0) ? 'x = ' + x1 :
-				`x1 = ${x1}, x2 = ${x2}`;
+		(discr < 0) ? 'no solution' :
+		(discr === 0) ? 'x = ' + x1 :
+		`x1 = ${x1}, x2 = ${x2}`;
 
 if (isNaN(a) || isNaN(b) || isNaN(c)) {
 	console.log ('Invalid input data');
