@@ -46,15 +46,33 @@ function makeListFromRange(arr) {
     return newArray;
 }
 
-// function getArrayOfKeys(obj, name) {
-//     let newArray = [];
-//     executeforEach(obj, function(name){
-//         newArray.push(obj[name]))}
-//     return newArray;
-// }
-// const actors = [
-//     { name: 'tommy', age: 36 },
-//     { name: 'lee', age: 28 }
-//   ];
-  
-// console.log(getArrayOfKeys(actors, 'name'));
+function getArrayOfKeys(arr, value) {
+    let newArray = []; 
+    executeforEach(arr, function(el){
+        newArray.push(el[value]);
+    })
+    return newArray;
+}
+
+function substitute(arr) {
+	return mapArray(arr, function(el) {
+		return el < 30 ? '*' : el; 
+	})
+}
+
+function getPastDay(date, days) {
+	const dateTime = date.getTime();
+	const daysTime = days * 24 * 3600000;
+	const result = new Date(dateTime - daysTime);
+	return result.getDate();
+}
+
+function formatDate(date) {
+	const year = date.getFullYear();
+	const month = date.getMonth() + 1;
+	const d = date.getDate();
+	const t = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+	const s = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+	const result = `${year}/${month}/${d} ${t}:${s}`;
+	return result;
+}
